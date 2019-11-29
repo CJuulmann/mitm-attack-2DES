@@ -80,13 +80,13 @@ def MITM(p, c):
 #   PREP and ATTACK
 # --------------------------------------------------
 
-# Precompute valid keys in keyspace
+# Precompute valid keys in keyspace 2^20
 valid_keys = []
 for k in range(2**20-1):
     temp = get_key(k & 0x00000000000fffff)
     valid_keys.append(temp)
 
-# Choose two random keys from valid_keys array
+# Choose two keys from valid_keys array
 idx1 = random.randrange(0, len(valid_keys), 1)
 idx2 = random.randrange(0, len(valid_keys), 1)
 rand1 = valid_keys[idx1]
