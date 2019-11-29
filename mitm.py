@@ -92,7 +92,7 @@ idx2 = random.randrange(0, len(valid_keys), 1)
 rand1 = valid_keys[idx1]
 rand2 = valid_keys[idx2]
 
-print("Keys to find")
+print("Keys to find:")
 print("k1=", rand1)
 print("k2=", rand2)
 
@@ -112,7 +112,9 @@ found = 0
 j = 0
 
 # Execute inital attack and save found keypairs to array
+start_time = time.time()
 keypairs = MITM(plaintexts[j], ciphertexts[j])
+print("--- %s seconds ---" % (time.time() - start_time))
 j += 1
 
 while not found:
